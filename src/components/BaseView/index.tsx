@@ -3,10 +3,9 @@ import { Button, Input, Select, Upload, Form, message } from 'antd';
 import { connect, FormattedMessage, formatMessage } from 'umi';
 import React, { Component } from 'react';
 
-import { CurrentUser } from '../data.d';
-import GeographicView from './GeographicView';
-import PhoneView from './PhoneView';
-import styles from './BaseView.less';
+import { CurrentUser } from './interface';
+import { GeographicView, PhoneView } from '..';
+import styles from './index.less';
 
 const { Option } = Select;
 
@@ -73,18 +72,18 @@ const validatorPhone = (
   callback();
 };
 
-interface BaseViewProps {
-  currentUser?: CurrentUser;
+interface IBaseViewProps {
+  data?: CurrentUser;
 }
 
-class BaseView extends Component<BaseViewProps> {
+class BaseView extends Component<IBaseViewProps> {
   view: HTMLDivElement | undefined = undefined;
 
   getAvatarURL() {
-    const { currentUser } = this.props;
-    if (currentUser) {
-      if (currentUser.avatar) {
-        return currentUser.avatar;
+    const { data } = this.props;
+    if (data) {
+      if (data.avatar) {
+        return data.avatar;
       }
       const url =
         'https://gw.alipayobjects.com/zos/rmsportal/BiazfanxmamNRoxxVxka.png';
@@ -104,7 +103,7 @@ class BaseView extends Component<BaseViewProps> {
   };
 
   render() {
-    const { currentUser } = this.props;
+    const { data } = this.props;
 
     return (
       <div className={styles.baseView} ref={this.getViewDom}>
@@ -112,7 +111,7 @@ class BaseView extends Component<BaseViewProps> {
           <Form
             layout="vertical"
             onFinish={this.handleFinish}
-            initialValues={currentUser}
+            initialValues={data}
             hideRequiredMark
           >
             <Form.Item
@@ -251,12 +250,4 @@ class BaseView extends Component<BaseViewProps> {
   }
 }
 
-export default connect(
-  ({
-    accountAndsettings,
-  }: {
-    accountAndsettings: { currentUser: CurrentUser };
-  }) => ({
-    currentUser: accountAndsettings.currentUser,
-  }),
-)(BaseView);
+export default BaseView;
