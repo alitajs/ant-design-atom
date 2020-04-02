@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import { FormattedMessage, Dispatch, connect } from 'umi';
 import { GridContent } from '@ant-design/pro-layout';
 import { Menu } from 'antd';
-import BaseView from './components/base';
+import { BaseView } from '@/components';
 import BindingView from './components/binding';
 import { CurrentUser } from './data.d';
 import NotificationView from './components/notification';
@@ -119,9 +119,10 @@ class Settings extends Component<SettingsProps, SettingsState> {
 
   renderChildren = () => {
     const { selectKey } = this.state;
+    const { currentUser } = this.props;
     switch (selectKey) {
       case 'base':
-        return <BaseView />;
+        return <BaseView data={currentUser} />;
       case 'security':
         return <SecurityView />;
       case 'binding':

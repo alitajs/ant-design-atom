@@ -4,11 +4,43 @@ import React from 'react';
 
 import { connect } from 'umi';
 import ArticleListContent from '../ArticleListContent';
-import { ListItemDataType } from '../../data.d';
-import { ModalState } from '../../model';
 import styles from './index.less';
 
-const Articles: React.FC<Partial<ModalState>> = (props) => {
+export interface Member {
+  avatar: string;
+  name: string;
+  id: string;
+}
+
+export interface ListItemDataType {
+  id: string;
+  owner: string;
+  title: string;
+  avatar: string;
+  cover: string;
+  status: 'normal' | 'exception' | 'active' | 'success';
+  percent: number;
+  logo: string;
+  href: string;
+  body?: any;
+  updatedAt: number;
+  createdAt: number;
+  subDescription: string;
+  description: string;
+  activeUser: number;
+  newUser: number;
+  star: number;
+  like: number;
+  message: number;
+  content: string;
+  members: Member[];
+}
+
+export interface IArticlesProps {
+  list: ListItemDataType[];
+}
+
+const Articles: React.FC<IArticlesProps> = (props) => {
   const { list } = props;
   const IconText: React.FC<{
     icon: React.ReactNode;
@@ -59,8 +91,4 @@ const Articles: React.FC<Partial<ModalState>> = (props) => {
   );
 };
 
-export default connect(
-  ({ accountAndcenter }: { accountAndcenter: ModalState }) => ({
-    list: accountAndcenter.list,
-  }),
-)(Articles);
+export default Articles;

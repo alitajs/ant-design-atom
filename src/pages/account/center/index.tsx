@@ -6,11 +6,9 @@ import { GridContent } from '@ant-design/pro-layout';
 import { Link, connect, Dispatch } from 'umi';
 import { RouteChildrenProps } from 'react-router';
 import { ModalState } from './model';
-import Projects from './components/Projects';
-import Articles from './components/Articles';
-import Applications from './components/Applications';
-import { CurrentUser, TagType } from './data.d';
-import styles from './Center.less';
+import { Projects, Articles, Applications } from '@/components';
+import { CurrentUser, TagType, ListItemDataType } from './data.d';
+import styles from './index.less';
 
 const operationTabList = [
   {
@@ -43,6 +41,7 @@ interface CenterProps extends RouteChildrenProps {
   dispatch: Dispatch<any>;
   currentUser: Partial<CurrentUser>;
   currentUserLoading: boolean;
+  list: ListItemDataType[];
 }
 interface CenterState {
   newTags: TagType[];
@@ -134,14 +133,15 @@ class Center extends Component<CenterProps, CenterState> {
   };
 
   renderChildrenByTabKey = (tabKey: CenterState['tabKey']) => {
+    const { list = [] } = this.props;
     if (tabKey === 'projects') {
-      return <Projects />;
+      return <Projects list={list} />;
     }
     if (tabKey === 'applications') {
-      return <Applications />;
+      return <Applications list={list} />;
     }
     if (tabKey === 'articles') {
-      return <Articles />;
+      return <Articles list={list} />;
     }
     return null;
   };
@@ -266,5 +266,6 @@ export default connect(
   }) => ({
     currentUser: accountAndcenter.currentUser,
     currentUserLoading: loading.effects['accountAndcenter/fetchCurrent'],
+    list: accountAndcenter.list,
   }),
 )(Center);
