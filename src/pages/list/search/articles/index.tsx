@@ -7,12 +7,10 @@ import {
   MessageOutlined,
 } from '@ant-design/icons';
 import { connect, Dispatch } from 'umi';
-import ArticleListContent from './components/ArticleListContent';
 import { StateType } from './model';
 import { ListItemDataType } from './data.d';
-import StandardFormRow from './components/StandardFormRow';
-import TagSelect from './components/TagSelect';
-import styles from './style.less';
+import { TagSelect, StandardFormRow, ArticleListContent } from '@/components';
+import styles from './index.less';
 
 const { Option } = Select;
 const FormItem = Form.Item;
