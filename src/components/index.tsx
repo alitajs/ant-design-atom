@@ -6,4 +6,5 @@ export { default as OfflineData } from './OfflineData';
 export { default as Yuan } from './Yuan';
 export { default as IntroduceRow } from './IntroduceRow';
 export { default as PageLoading } from './PageLoading';
-export { default as ProportionSales } from './ProportionSales';
+export { default as EditableLinkGroup } from './EditableLinkGroup';
+export { default as Radar } from './Charts/Radar';
