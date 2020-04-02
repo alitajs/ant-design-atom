@@ -3,10 +3,15 @@ import { Card, Radio } from 'antd';
 import { FormattedMessage } from 'umi';
 import { RadioChangeEvent } from 'antd/es/radio';
 import React from 'react';
-import { VisitDataType } from '../data.d';
-import { Pie } from './Charts';
-import Yuan from '../utils/Yuan';
-import styles from '../style.less';
+import { Yuan } from '..';
+import styles from './index.less';
+
+import { Pie } from '../Charts';
+
+export interface VisitDataType {
+  x: string;
+  y: number;
+}
 
 const ProportionSales = ({
   dropdownGroup,

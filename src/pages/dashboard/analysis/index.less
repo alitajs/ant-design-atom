@@ -1,0 +1,38 @@
+@import '~antd/es/style/themes/default.less';
+
+.iconGroup {
+  span.anticon {
+    margin-left: 16px;
+    color: @text-color-secondary;
+    cursor: pointer;
+    transition: color 0.32s;
+
+    &:hover {
+      color: @text-color;
+    }
+  }
+}
+
+@media screen and (max-width: @screen-md) {
+  .rankingTitle {
+    margin-top: 16px;
+  }
+
+  .salesCard .salesBar {
+    padding: 16px;
+  }
+}
+
+@media screen and (max-width: @screen-sm) {
+  .salesExtraWrap {
+    display: none;
+  }
+
+  .salesCard {
+    :global {
+      .ant-tabs-content {
+        padding-top: 30px;
+      }
+    }
+  }
+}

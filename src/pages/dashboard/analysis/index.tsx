@@ -7,18 +7,20 @@ import { RangePickerProps } from 'antd/es/date-picker/generatePicker';
 import moment from 'moment';
 import { connect, Dispatch } from 'umi';
 
-import PageLoading from './components/PageLoading';
+import { PageLoading } from '@/components';
 import { getTimeDistance } from './utils/utils';
 import { AnalysisData } from './data.d';
-import styles from './style.less';
+import styles from './index.less';
 
-const IntroduceRow = React.lazy(() => import('./components/IntroduceRow'));
-const SalesCard = React.lazy(() => import('./components/SalesCard'));
-const TopSearch = React.lazy(() => import('./components/TopSearch'));
-const ProportionSales = React.lazy(() =>
-  import('./components/ProportionSales'),
+const IntroduceRow = React.lazy(() =>
+  import('../../../components/IntroduceRow'),
 );
-const OfflineData = React.lazy(() => import('./components/OfflineData'));
+const SalesCard = React.lazy(() => import('../../../components/SalesCard'));
+const TopSearch = React.lazy(() => import('../../../components/TopSearch'));
+const ProportionSales = React.lazy(() =>
+  import('../../../components/ProportionSales'),
+);
+const OfflineData = React.lazy(() => import('../../../components/OfflineData'));
 
 type RangePickerValue = RangePickerProps<moment.Moment>['value'];
 

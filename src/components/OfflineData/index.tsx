@@ -1,11 +1,22 @@
 import { Card, Col, Row, Tabs } from 'antd';
 import { FormattedMessage, formatMessage } from 'umi';
 import React from 'react';
-import { OfflineChartData, OfflineDataType } from '../data.d';
 
-import { TimelineChart, Pie } from './Charts';
-import NumberInfo from './NumberInfo';
-import styles from '../style.less';
+import { NumberInfo } from '..';
+import styles from './index.less';
+
+import { TimelineChart, Pie } from '../Charts';
+
+export interface OfflineDataType {
+  name: string;
+  cvr: number;
+}
+
+export interface OfflineChartData {
+  x: any;
+  y1: number;
+  y2: number;
+}
 
 const CustomTab = ({
   data,

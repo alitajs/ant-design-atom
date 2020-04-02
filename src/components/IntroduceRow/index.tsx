@@ -4,11 +4,10 @@ import { Col, Row, Tooltip } from 'antd';
 import { FormattedMessage } from 'umi';
 import React from 'react';
 import numeral from 'numeral';
-import { ChartCard, MiniArea, MiniBar, MiniProgress, Field } from './Charts';
-import { VisitDataType } from '../data.d';
-import Trend from '../../../../components/Trend';
-import Yuan from '../utils/Yuan';
-import styles from '../style.less';
+import { Trend, Yuan } from '..';
+import styles from './index.less';
+
+import { ChartCard, MiniArea, MiniBar, MiniProgress, Field } from '../Charts';
 
 const topColResponsiveProps = {
   xs: 24,
@@ -18,6 +17,11 @@ const topColResponsiveProps = {
   xl: 6,
   style: { marginBottom: 24 },
 };
+
+export interface VisitDataType {
+  x: string;
+  y: number;
+}
 
 const IntroduceRow = ({
   loading,
