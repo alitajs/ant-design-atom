@@ -7,7 +7,7 @@ import { SearchDataType, VisitDataType } from '../data.d';
 
 import { MiniArea } from './Charts';
 import NumberInfo from './NumberInfo';
-import Trend from './Trend';
+import Trend from '../../../../components/Trend';
 import styles from '../style.less';
 
 const columns = [
