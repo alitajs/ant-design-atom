@@ -15,9 +15,8 @@ import {
 import React, { FC, useState } from 'react';
 import { PageHeaderWrapper } from '@ant-design/pro-layout';
 import { connect, Dispatch } from 'umi';
-import TableForm from './components/TableForm';
-import FooterToolbar from './components/FooterToolbar';
-import styles from './style.less';
+import { TableForm, FooterToolbar } from '@/components';
+import styles from './index.less';
 
 type InternalNamePath = (string | number)[];
 

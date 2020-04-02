@@ -2,7 +2,7 @@ import { PlusOutlined } from '@ant-design/icons';
 import { Button, Divider, Input, Popconfirm, Table, message } from 'antd';
 import React, { FC, useState } from 'react';
 
-import styles from '../style.less';
+import styles from './index.less';
 
 interface TableFormDateType {
   key: string;
