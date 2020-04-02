@@ -4,10 +4,9 @@ import React, { Component } from 'react';
 import { Link, Dispatch, connect } from 'umi';
 import { PageHeaderWrapper } from '@ant-design/pro-layout';
 import moment from 'moment';
-import Radar from './components/Radar';
+import { Radar, EditableLinkGroup } from '@/components';
 import { ModalState } from './model';
-import EditableLinkGroup from './components/EditableLinkGroup';
-import styles from './style.less';
+import styles from './index.less';
 import {
   ActivitiesType,
   CurrentUser,
