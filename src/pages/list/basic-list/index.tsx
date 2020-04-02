@@ -19,7 +19,7 @@ import { findDOMNode } from 'react-dom';
 import { PageHeaderWrapper } from '@ant-design/pro-layout';
 import { connect, Dispatch } from 'umi';
 import moment from 'moment';
-import OperationModal from './components/OperationModal';
+import { OperationModal } from '@/components';
 import { StateType } from './model';
 import { BasicListItemDataType } from './data.d';
 import styles from './style.less';

@@ -2,12 +2,10 @@ import { Card, Col, Form, List, Row, Select, Typography } from 'antd';
 import React, { FC, useEffect } from 'react';
 import { connect, Dispatch } from 'umi';
 import moment from 'moment';
-import AvatarList from './components/AvatarList';
 import { StateType } from './model';
 import { ListItemDataType } from './data.d';
-import StandardFormRow from './components/StandardFormRow';
-import TagSelect from './components/TagSelect';
-import styles from './style.less';
+import { TagSelect, StandardFormRow, AvatarList } from '@/components';
+import styles from './index.less';
 
 const { Option } = Select;
 const FormItem = Form.Item;

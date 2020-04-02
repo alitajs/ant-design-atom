@@ -21,3 +21,8 @@ export { default as PhoneView } from './PhoneView';
 export { default as SecurityView } from './SecurityView';
 export { default as NotificationView } from './NotificationView';
 export { default as BindingView } from './BindingView';
+export { default as OperationModal } from './OperationModal';
+export { default as CreateForm } from './CreateForm';
+export { default as UpdateForm } from './UpdateForm';
+export { default as TagSelect } from './TagSelect';
+export { default as StandardFormRow } from './StandardFormRow';
