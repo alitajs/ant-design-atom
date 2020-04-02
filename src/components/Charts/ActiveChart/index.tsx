@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
 import { Statistic } from 'antd';
-import { MiniArea } from '../Charts';
+import MiniArea from '../MiniArea';
 import styles from './index.less';
 
 function fixedZero(val: number) {
