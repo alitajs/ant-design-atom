@@ -1,5 +1,5 @@
 import React from 'react';
-import { yuan } from '../../pages/dashboard/analysis/components/Charts';
+import { yuan } from '../Charts';
 /**
  * 减少使用 dangerouslySetInnerHTML
  */
