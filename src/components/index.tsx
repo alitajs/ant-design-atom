@@ -18,3 +18,6 @@ export { default as Applications } from './Applications';
 export { default as GeographicView } from './GeographicView';
 export { default as BaseView } from './BaseView';
 export { default as PhoneView } from './PhoneView';
+export { default as SecurityView } from './SecurityView';
+export { default as NotificationView } from './NotificationView';
+export { default as BindingView } from './BindingView';

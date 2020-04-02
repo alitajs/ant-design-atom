@@ -3,12 +3,14 @@ import React, { Component } from 'react';
 import { FormattedMessage, Dispatch, connect } from 'umi';
 import { GridContent } from '@ant-design/pro-layout';
 import { Menu } from 'antd';
-import { BaseView } from '@/components';
-import BindingView from './components/binding';
+import {
+  BaseView,
+  SecurityView,
+  NotificationView,
+  BindingView,
+} from '@/components';
 import { CurrentUser } from './data.d';
-import NotificationView from './components/notification';
-import SecurityView from './components/security';
-import styles from './style.less';
+import styles from './index.less';
 
 const { Item } = Menu;
 
