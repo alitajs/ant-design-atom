@@ -6,7 +6,7 @@ import { StateType } from './model';
 import Step1 from './components/Step1';
 import Step2 from './components/Step2';
 import Step3 from './components/Step3';
-import styles from './style.less';
+import styles from './index.less';
 
 const { Step } = Steps;
 

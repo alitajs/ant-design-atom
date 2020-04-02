@@ -8,3 +8,5 @@ export { default as IntroduceRow } from './IntroduceRow';
 export { default as PageLoading } from './PageLoading';
 export { default as EditableLinkGroup } from './EditableLinkGroup';
 export { default as Radar } from './Charts/Radar';
+export { default as TableForm } from './TableForm';
+export { default as FooterToolbar } from './FooterToolbar';
