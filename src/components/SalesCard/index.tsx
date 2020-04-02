@@ -5,12 +5,18 @@ import moment from 'moment';
 
 import React from 'react';
 import numeral from 'numeral';
-import { VisitDataType } from '../data.d';
-import { Bar } from './Charts';
-import styles from '../style.less';
+import styles from './index.less';
 
+import { Bar } from '../Charts';
+
+// const { Bar } = Charts;
 const { RangePicker } = DatePicker;
 const { TabPane } = Tabs;
+
+export interface VisitDataType {
+  x: string;
+  y: number;
+}
 
 const rankingListData: { title: string; total: number }[] = [];
 for (let i = 0; i < 7; i += 1) {

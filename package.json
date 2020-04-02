@@ -26,10 +26,8 @@
       "prettier --parser=typescript --write"
     ]
   },
-  "dependencies":{
-
+  "dependencies": {
     "@ant-design/icons": "^4.0.0",
-
     "@antv/data-set": "^0.11.0",
     "@antv/l7": "^2.0.0",
     "@antv/l7-maps": "^2.0.0",
@@ -62,10 +60,7 @@
     "use-merge-value": "^1.0.1"
   },
   "devDependencies": {
-    "umi": "^3.0.14",
-
-    "umi-request": "^1.0.8",
-        "@ant-design/pro-layout": "^5.0.8",
+    "@ant-design/pro-layout": "^5.0.8",
     "@ant-design/pro-table": "^2.1.11",
     "@umijs/preset-ant-design-pro": "^1.0.1",
     "@umijs/preset-react": "^1.4.8",
@@ -74,6 +69,8 @@
     "father-build": "^1.17.2",
     "lint-staged": "^10.0.7",
     "prettier": "^2.0.2",
+    "umi": "^3.0.14",
+    "umi-request": "^1.0.8",
     "yorkie": "^2.0.0"
   }
 }

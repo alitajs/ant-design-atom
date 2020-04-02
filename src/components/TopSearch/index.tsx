@@ -3,12 +3,25 @@ import { Card, Col, Row, Table, Tooltip } from 'antd';
 import { FormattedMessage } from 'umi';
 import React from 'react';
 import numeral from 'numeral';
-import { SearchDataType, VisitDataType } from '../data.d';
 
-import { MiniArea } from './Charts';
-import NumberInfo from './NumberInfo';
-import Trend from '../../../../components/Trend';
-import styles from '../style.less';
+import { Trend, NumberInfo } from '@/components';
+
+import { MiniArea } from '../Charts';
+
+// const { MiniArea } = Charts;
+
+export interface VisitDataType {
+  x: string;
+  y: number;
+}
+
+export interface SearchDataType {
+  index: number;
+  keyword: string;
+  count: number;
+  range: number;
+  status: number;
+}
 
 const columns = [
   {
@@ -42,7 +55,7 @@ const columns = [
     dataIndex: 'count',
     key: 'count',
     sorter: (a: { count: number }, b: { count: number }) => a.count - b.count,
-    className: styles.alignRight,
+    // className: styles.alignRight,
   },
   {
     title: (
