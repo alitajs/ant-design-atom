@@ -6,7 +6,7 @@ import React from 'react';
 import numeral from 'numeral';
 import { ChartCard, MiniArea, MiniBar, MiniProgress, Field } from './Charts';
 import { VisitDataType } from '../data.d';
-import Trend from './Trend';
+import Trend from '../../../../components/Trend';
 import Yuan from '../utils/Yuan';
 import styles from '../style.less';
 
