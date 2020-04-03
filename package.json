@@ -1,6 +1,6 @@
 {
-  "private": true,
   "name": "ant-design-atom",
+  "version": "0.0.1-beta.01",
   "description": "",
   "scripts": {
     "start": "umi dev",
@@ -11,8 +11,8 @@
     "test": "umi-test",
     "test:coverage": "umi-test --coverage"
   },
-  "main": "dist/index.js",
-  "module": "dist/index.esm.js",
+  "main": "lib/components/index.js",
+  "module": "es/components/index.js",
   "typings": "dist/index.d.ts",
   "gitHooks": {
     "pre-commit": "lint-staged",
