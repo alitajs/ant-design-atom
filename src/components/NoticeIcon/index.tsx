@@ -3,7 +3,8 @@ import { Badge, Spin, Tabs } from 'antd';
 import useMergeValue from 'use-merge-value';
 import React from 'react';
 import classNames from 'classnames';
-import NoticeList, { NoticeIconTabProps } from './NoticeList';
+import { NoticeIconTabProps } from './interface';
+import { NoticeList } from '..';
 
 import HeaderDropdown from '../HeaderDropdown';
 import styles from './index.less';

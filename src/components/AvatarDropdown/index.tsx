@@ -9,7 +9,7 @@ import React from 'react';
 import { history, ConnectProps, connect } from 'umi';
 import { ConnectState } from '@/models/connect';
 import { CurrentUser } from '@/models/user';
-import HeaderDropdown from '../HeaderDropdown';
+import { HeaderDropdown } from '..';
 import styles from './index.less';
 
 export interface GlobalHeaderRightProps extends Partial<ConnectProps> {

@@ -6,7 +6,7 @@ import moment from 'moment';
 import { NoticeItem } from '@/models/global';
 import { CurrentUser } from '@/models/user';
 import { ConnectState } from '@/models/connect';
-import NoticeIcon from '../NoticeIcon';
+import { NoticeIcon } from '..';
 import styles from './index.less';
 
 export interface GlobalHeaderRightProps extends Partial<ConnectProps> {
