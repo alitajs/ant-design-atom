@@ -2,7 +2,6 @@ import { StarTwoTone, LikeOutlined, MessageFilled } from '@ant-design/icons';
 import { List, Tag } from 'antd';
 import React from 'react';
 
-import { connect } from 'umi';
 import ArticleListContent from '../ArticleListContent';
 import styles from './index.less';
 

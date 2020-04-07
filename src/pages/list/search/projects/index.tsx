@@ -4,7 +4,7 @@ import { connect, Dispatch } from 'umi';
 import moment from 'moment';
 import { StateType } from './model';
 import { ListItemDataType } from './data.d';
-import { TagSelect, StandardFormRow, AvatarList } from '@/components';
+import { TagSelect, StandardFormRow, AvatarList } from '../../../../components';
 import styles from './index.less';
 
 const { Option } = Select;

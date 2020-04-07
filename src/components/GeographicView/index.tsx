@@ -108,6 +108,7 @@ class GeographicView extends Component<GeographicViewProps> {
 
   conversionObject() {
     const { value } = this.props;
+    console.log(value);
     if (!value) {
       return {
         province: nullSelectItem,

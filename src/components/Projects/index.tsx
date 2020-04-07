@@ -1,7 +1,6 @@
 import { Card, List } from 'antd';
 import React from 'react';
 
-import { connect } from 'umi';
 import moment from 'moment';
 import AvatarList from '../AvatarList';
 import styles from './index.less';

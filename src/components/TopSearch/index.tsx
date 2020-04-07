@@ -4,7 +4,7 @@ import { FormattedMessage } from 'umi';
 import React from 'react';
 import numeral from 'numeral';
 
-import { Trend, NumberInfo } from '@/components';
+import { Trend, NumberInfo } from '..';
 
 import { MiniArea } from '../Charts';
 
