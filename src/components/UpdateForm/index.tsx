@@ -10,7 +10,7 @@ import {
   Steps,
 } from 'antd';
 
-import { TableListItem } from '../data.d';
+import { TableListItem } from './interface';
 
 export interface FormValueType extends Partial<TableListItem> {
   target?: string;

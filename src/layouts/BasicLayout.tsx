@@ -10,8 +10,9 @@ import ProLayout, {
   DefaultFooter,
   SettingDrawer,
 } from '@ant-design/pro-layout';
+import { ClickParam } from 'antd/es/menu';
 import React, { useEffect } from 'react';
-import { Link, useIntl, connect, Dispatch } from 'umi';
+import { Link, useIntl, connect, Dispatch, ConnectProps, history } from 'umi';
 import { GithubOutlined } from '@ant-design/icons';
 import { Result, Button } from 'antd';
 import Authorized from '@/utils/Authorized';
@@ -93,6 +94,7 @@ const BasicLayout: React.FC<BasicLayoutProps> = (props) => {
     location = {
       pathname: '/',
     },
+    currentUser,
   } = props;
   /**
    * constructor
@@ -124,6 +126,21 @@ const BasicLayout: React.FC<BasicLayoutProps> = (props) => {
   ) || {
     authority: undefined,
   };
+
+  const onMenuClick = (event: ClickParam) => {
+    const { key } = event;
+
+    if (key === 'logout') {
+      if (dispatch) {
+        dispatch({
+          type: 'login/logout',
+        });
+      }
+      return;
+    }
+    history.push(`/account/${key}`);
+  };
+
   const { formatMessage } = useIntl();
   return (
     <>
@@ -167,7 +184,14 @@ const BasicLayout: React.FC<BasicLayoutProps> = (props) => {
         }}
         footerRender={() => defaultFooterDom}
         menuDataRender={menuDataRender}
-        rightContentRender={() => <GlobalHeader />}
+        rightContentRender={() => (
+          <GlobalHeader
+            onMenuClick={onMenuClick}
+            currentUser={currentUser}
+            theme={settings.navTheme}
+            layout={settings.layout}
+          />
+        )}
         {...props}
         {...settings}
       >
@@ -188,7 +212,8 @@ const BasicLayout: React.FC<BasicLayoutProps> = (props) => {
   );
 };
 
-export default connect(({ global, settings }: ConnectState) => ({
+export default connect(({ global, settings, user }: ConnectState) => ({
   collapsed: global.collapsed,
   settings,
+  currentUser: user.currentUser,
 }))(BasicLayout);

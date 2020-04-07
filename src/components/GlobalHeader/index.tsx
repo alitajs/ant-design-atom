@@ -1,16 +1,19 @@
 import { Tooltip, Tag } from 'antd';
 import { QuestionCircleOutlined } from '@ant-design/icons';
 import React from 'react';
-import { connect, ConnectProps } from 'umi';
-import { ConnectState } from '@/models/connect';
-import { Avatar, NoticeIconView } from '..';
+import { AvatarDropdown, NoticeIconView } from '..';
+import { CurrentUser, NoticeItem } from './interface';
 import HeaderSearch from '../HeaderSearch';
 import SelectLang from '../SelectLang';
 import styles from './index.less';
-export type SiderTheme = 'light' | 'dark';
-export interface GlobalHeaderRightProps extends Partial<ConnectProps> {
+export type SiderTheme = 'light' | 'dark' | 'realDark' | undefined;
+export interface GlobalHeaderRightProps {
   theme?: SiderTheme;
   layout: 'sidemenu' | 'topmenu';
+  currentUser?: CurrentUser;
+  onMenuClick: any;
+  fetchingNotices?: boolean;
+  notices?: NoticeItem[];
 }
 const ENVTagColor = {
   dev: 'orange',
@@ -64,7 +67,11 @@ const GlobalHeaderRight: React.SFC<GlobalHeaderRightProps> = (props) => {
         </a>
       </Tooltip>
       <NoticeIconView />
-      <Avatar menu />
+      <AvatarDropdown
+        menu
+        onMenuClick={props.onMenuClick}
+        currentUser={props.currentUser}
+      />
       {REACT_APP_ENV && (
         <span>
           <Tag color={ENVTagColor[REACT_APP_ENV]}>{REACT_APP_ENV}</Tag>
@@ -75,7 +82,4 @@ const GlobalHeaderRight: React.SFC<GlobalHeaderRightProps> = (props) => {
   );
 };
 
-export default connect(({ settings }: ConnectState) => ({
-  theme: settings.navTheme,
-  layout: settings.layout,
-}))(GlobalHeaderRight);
+export default GlobalHeaderRight;

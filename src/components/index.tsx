@@ -1,5 +1,5 @@
 export { default as AvatarList } from './AvatarList';
-export { default as Avatar } from './AvatarDropdown';
+export { default as AvatarDropdown } from './AvatarDropdown';
 export { default as Applications } from './Applications';
 export { default as ArticleListContent } from './ArticleListContent';
 export { default as Articles } from './Articles';
