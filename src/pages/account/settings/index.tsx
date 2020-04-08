@@ -8,7 +8,7 @@ import {
   SecurityView,
   NotificationView,
   BindingView,
-} from '@/components';
+} from '../../../components';
 import { CurrentUser } from './data.d';
 import styles from './index.less';
 

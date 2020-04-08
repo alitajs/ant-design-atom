@@ -7,7 +7,7 @@ import { RangePickerProps } from 'antd/es/date-picker/generatePicker';
 import moment from 'moment';
 import { connect, Dispatch } from 'umi';
 
-import { PageLoading } from '@/components';
+import { PageLoading } from '../../../components';
 import { getTimeDistance } from './utils/utils';
 import { AnalysisData } from './data.d';
 import styles from './index.less';

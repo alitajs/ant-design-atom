@@ -4,7 +4,7 @@ import React from 'react';
 import { AvatarDropdown, NoticeIconView } from '..';
 import { CurrentUser, NoticeItem } from './interface';
 import HeaderSearch from '../HeaderSearch';
-import SelectLang from '../SelectLang';
+import { SelectLang } from '..';
 import styles from './index.less';
 export type SiderTheme = 'light' | 'dark' | 'realDark' | undefined;
 export interface GlobalHeaderRightProps {

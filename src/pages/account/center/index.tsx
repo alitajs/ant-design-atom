@@ -6,7 +6,7 @@ import { GridContent } from '@ant-design/pro-layout';
 import { Link, connect, Dispatch } from 'umi';
 import { RouteChildrenProps } from 'react-router';
 import { ModalState } from './model';
-import { Projects, Articles, Applications } from '@/components';
+import { Projects, Articles, Applications } from '../../../components';
 import { CurrentUser, TagType, ListItemDataType } from './data.d';
 import styles from './index.less';
 
