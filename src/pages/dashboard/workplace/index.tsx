@@ -4,7 +4,7 @@ import React, { Component } from 'react';
 import { Link, Dispatch, connect } from 'umi';
 import { PageHeaderWrapper } from '@ant-design/pro-layout';
 import moment from 'moment';
-import { Radar, EditableLinkGroup } from '@/components';
+import { Radar, EditableLinkGroup } from '../../../components';
 import { ModalState } from './model';
 import styles from './index.less';
 import {

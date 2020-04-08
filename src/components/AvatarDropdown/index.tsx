@@ -5,7 +5,6 @@ import {
 } from '@ant-design/icons';
 import { Avatar, Menu, Spin } from 'antd';
 import React from 'react';
-import { history, ConnectProps, connect } from 'umi';
 import { CurrentUser } from './interface';
 import { HeaderDropdown } from '..';
 import styles from './index.less';

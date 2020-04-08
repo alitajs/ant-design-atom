@@ -9,7 +9,11 @@ import {
 import { connect, Dispatch } from 'umi';
 import { StateType } from './model';
 import { ListItemDataType } from './data.d';
-import { TagSelect, StandardFormRow, ArticleListContent } from '@/components';
+import {
+  TagSelect,
+  StandardFormRow,
+  ArticleListContent,
+} from '../../../../components';
 import styles from './index.less';
 
 const { Option } = Select;

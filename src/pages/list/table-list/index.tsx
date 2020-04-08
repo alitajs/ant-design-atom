@@ -3,8 +3,8 @@ import { Button, Divider, Dropdown, Menu, message } from 'antd';
 import React, { useState, useRef } from 'react';
 import { PageHeaderWrapper } from '@ant-design/pro-layout';
 import ProTable, { ProColumns, ActionType } from '@ant-design/pro-table';
-import { CreateForm, UpdateForm } from '@/components';
-import { FormValueType } from '@/components/UpdateForm';
+import { CreateForm, UpdateForm } from '../../../components';
+import { FormValueType } from '../../../components/UpdateForm';
 import { TableListItem } from './data.d';
 import { queryRule, updateRule, addRule, removeRule } from './service';
 
@@ -174,7 +174,7 @@ const TableList: React.FC<{}> = () => {
             项&nbsp;&nbsp;
             <span>
               服务调用次数总计{' '}
-              {selectedRows.reduce((pre, item) => pre + item.callNo, 0)} 万
+              {/* {selectedRows.reduce((pre, item) => pre + item.callNo, 0)} 万 */}
             </span>
           </div>
         )}

@@ -20,7 +20,7 @@ import React, { FC, useEffect } from 'react';
 import { connect, Dispatch } from 'umi';
 import numeral from 'numeral';
 import { ListItemDataType } from './data.d';
-import { TagSelect, StandardFormRow } from '@/components';
+import { TagSelect, StandardFormRow } from '../../../../components';
 import styles from './index.less';
 import { StateType } from './model';
 
