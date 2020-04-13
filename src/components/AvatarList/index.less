@@ -1,50 +1,48 @@
 @import '~antd/es/style/themes/default.less';
 
-.avatarList {
+.atom-avatar-list {
   display: inline-block;
+
   ul {
     display: inline-block;
-    margin-left: 8px;
     font-size: 0;
   }
 }
 
-.avatarItem {
+.atom-avatar-item {
   display: inline-block;
   width: @avatar-size-base;
   height: @avatar-size-base;
   margin-left: -8px;
   font-size: @font-size-base;
-  :global {
-    .ant-avatar {
-      border: 1px solid #fff;
-    }
+
+  .ant-avatar {
+    border: 1px solid #fff;
   }
 }
 
-.avatarItemLarge {
+.atom-avatar-item-large {
   width: @avatar-size-lg;
   height: @avatar-size-lg;
 }
 
-.avatarItemSmall {
+.atom-avatar-item-small {
   width: @avatar-size-sm;
   height: @avatar-size-sm;
 }
 
-.avatarItemMini {
+.atom-avatar-item-mini {
   width: 20px;
   height: 20px;
-  :global {
-    .ant-avatar {
-      width: 20px;
-      height: 20px;
-      line-height: 20px;
 
-      .ant-avatar-string {
-        font-size: 12px;
-        line-height: 18px;
-      }
+  .ant-avatar {
+    width: 20px;
+    height: 20px;
+    line-height: 20px;
+
+    .ant-avatar-string {
+      font-size: 12px;
+      line-height: 18px;
     }
   }
 }
