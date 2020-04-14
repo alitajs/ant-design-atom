@@ -3,7 +3,7 @@
  * desc: 完整应用列表
  */
 import React, { FC } from 'react';
-import { ApplicationList, formatWan } from 'ant-design-atom';
+import { CardList, formatWan } from 'ant-design-atom';
 import numeral from 'numeral';
 
 const list = [
@@ -80,7 +80,7 @@ const list = [
 
 const Page: FC = () => {
   return (
-    <ApplicationList
+    <CardList
       list={list}
       bottomClick={(id: string, item: string) => console.log(id, item)}
       cardClick={(id: string) => console.log(id)}
