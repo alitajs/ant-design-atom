@@ -10,7 +10,7 @@ export interface DataProps {
 }
 
 export interface ListItemDataType {
-  id: string;
+  id: string | number;
   title?: string;
   avatar?: string;
   dropdownItem?: string[] | [];
@@ -18,8 +18,8 @@ export interface ListItemDataType {
   actions?: string;
 }
 
-export interface IApplicationsProps {
+export interface ICardListProps {
   list: ListItemDataType[];
   bottomClick?: (id: string | number, value: string) => void;
-  cardClick?: (id: string) => void;
+  cardClick?: (id: string | number) => void;
 }

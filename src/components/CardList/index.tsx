@@ -7,10 +7,10 @@ import {
 } from '@ant-design/icons';
 import { Avatar, Card, Dropdown, List, Menu, Tooltip } from 'antd';
 import React from 'react';
-import { IApplicationsProps, ListItemDataType } from './interface';
+import { ICardListProps, ListItemDataType } from './interface';
 import './index.less';
 
-const Applications: React.FC<IApplicationsProps> = props => {
+const CardList: React.FC<ICardListProps> = props => {
   const { list, bottomClick, cardClick } = props;
   const itemMenu = (id: string | number, dropdownItems: string[]) => (
     <Menu>
@@ -31,15 +31,15 @@ const Applications: React.FC<IApplicationsProps> = props => {
     id: any;
   }> = ({ id, data = [] }) => (
     <div
-      className="atom-applications-card-info"
+      className="atom-card-list-info"
       onClick={() => {
         if (cardClick) cardClick(id);
       }}
     >
       {data.map((val: { label: React.ReactNode; value: string }) => (
         <div key={val.value}>
-          <p className="atom-applications-card-label">{val.label}</p>
-          <p className="atom-applications-card-value">{val.value}</p>
+          <p className="atom-card-list-label">{val.label}</p>
+          <p className="atom-card-list-value">{val.value}</p>
         </div>
       ))}
     </div>
@@ -108,7 +108,7 @@ const Applications: React.FC<IApplicationsProps> = props => {
   return (
     <List
       rowKey="id"
-      className="atom-applications-card-list"
+      className="atom-card-list"
       grid={{ gutter: 24, xxl: 3, xl: 2, lg: 2, md: 2, sm: 2, xs: 1 }}
       dataSource={list}
       renderItem={item => (
@@ -133,4 +133,4 @@ const Applications: React.FC<IApplicationsProps> = props => {
   );
 };
 
-export default Applications;
+export default CardList;

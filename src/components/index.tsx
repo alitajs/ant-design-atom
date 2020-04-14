@@ -1,2 +1,2 @@
 export { default as AvatarList } from './AvatarList';
-export { default as ApplicationList } from './ApplicationList';
+export { default as CardList } from './CardList';
