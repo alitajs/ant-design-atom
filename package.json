@@ -24,14 +24,19 @@
     ]
   },
   "dependencies": {
-    "@umijs/preset-react": "1.x",
-    "@umijs/test": "^3.0.5",
     "classnames": "^2.2.6",
+    "numeral": "^2.0.6"
+  },
+  "devDependencies": {
+    "prettier": "^1.19.1",
     "dumi": "^1.0.6",
     "father-build": "^1.17.2",
+    "@umijs/preset-react": "1.x",
+    "@umijs/test": "^3.0.5",
     "lint-staged": "^10.0.7",
-    "prettier": "^1.19.1",
-    "react": "^16.12.0",
     "yorkie": "^2.0.0"
+  },
+  "peerDependencies": {
+    "react": "^16.12.0"
   }
 }
