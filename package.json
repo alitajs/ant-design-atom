@@ -24,16 +24,17 @@
     ]
   },
   "dependencies": {
+    "bizcharts": "^3.5.8",
     "classnames": "^2.2.6",
     "numeral": "^2.0.6"
   },
   "devDependencies": {
-    "prettier": "^1.19.1",
-    "dumi": "^1.0.6",
-    "father-build": "^1.17.2",
     "@umijs/preset-react": "1.x",
     "@umijs/test": "^3.0.5",
+    "dumi": "^1.0.6",
+    "father-build": "^1.17.2",
     "lint-staged": "^10.0.7",
+    "prettier": "^1.19.1",
     "yorkie": "^2.0.0"
   },
   "peerDependencies": {
