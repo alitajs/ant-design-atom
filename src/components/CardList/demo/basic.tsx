@@ -78,14 +78,12 @@ const list = [
   },
 ];
 
-const Page: FC = () => {
-  return (
-    <CardList
-      list={list}
-      bottomClick={(id: string, item: string) => console.log(id, item)}
-      cardClick={(id: string) => console.log(id)}
-    />
-  );
-};
+const Page: FC = () => (
+  <CardList
+    list={list}
+    bottomClick={(id: string, item: string) => console.log(id, item)}
+    cardClick={(id: string) => console.log(id)}
+  />
+);
 
 export default Page;

@@ -119,7 +119,9 @@ const CardList: React.FC<ICardListProps> = props => {
             actions={actions(item)}
           >
             <Card.Meta
-              avatar={item.avatar && <Avatar size="small" src={item.avatar} />}
+              avatar={
+                item.avatar && <Avatar size="default" src={item.avatar} />
+              }
               title={item.title}
               onClick={() => {
                 if (cardClick) cardClick(item.id);
