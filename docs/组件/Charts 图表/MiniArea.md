@@ -1,12 +1,10 @@
-# Charts 图表
+# MiniArea
 
-## MiniArea
+## 代码演示
 
-### 代码演示
+<code src="../../../src/components/Charts/MiniArea/demo/miniArea.tsx" />
 
-<code src="../../src/components/Charts/demo/miniAreaDemo.tsx" />
-
-### MiniArea API
+## API
 
 | 参数        | 说明                                               | 类型                           | 默认值                  | 是否必填 |
 | ----------- | -------------------------------------------------- | ------------------------------ | ----------------------- | -------- |
