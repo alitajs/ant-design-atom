@@ -1,7 +1,7 @@
 import { Axis, Chart, Geom, Tooltip, AxisProps } from 'bizcharts';
 
 import React from 'react';
-import './index.less';
+import '../index.less';
 
 export interface MiniAreaProps {
   color?: string;
@@ -70,8 +70,8 @@ const MiniArea: React.FC<MiniAreaProps> = props => {
   const chartHeight = height + 54;
 
   return (
-    <div className="atom-mini-area" style={{ height }}>
-      <div className="atom-mini-area-content">
+    <div className="atom-mini-chart" style={{ height }}>
+      <div className="atom-mini-chart-content">
         {height > 0 && (
           <Chart
             animate={animate}
