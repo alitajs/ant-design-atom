@@ -30,7 +30,8 @@
     "bizcharts-plugin-slider": "^3.0.1",
     "classnames": "^2.2.6",
     "lodash": "^4.17.15",
-    "numeral": "^2.0.6"
+    "numeral": "^2.0.6",
+    "react-fittext": "^1.0.0"
   },
   "devDependencies": {
     "@umijs/preset-react": "1.x",
