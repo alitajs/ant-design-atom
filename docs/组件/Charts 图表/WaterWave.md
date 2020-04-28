@@ -4,6 +4,8 @@
 
 <code src="../../../src/components/Charts/WaterWave/demo/basic.tsx" />
 
+## API
+
 | 参数    | 说明   | 类型               | 默认值  | 是否必填 |
 | ------- | ------ | ------------------ | ------- | -------- |
 | percent | 百分比 | number             | 0       | 是       |

@@ -5,3 +5,4 @@ export { default as Radar } from './Radar';
 export { default as WaterWave } from './WaterWave';
 export { default as Gauge } from './Gauge';
 export { default as TagCloud } from './TagCloud';
+export { default as TimeLine } from './TimelineChart';
