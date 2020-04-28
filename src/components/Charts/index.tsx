@@ -6,3 +6,4 @@ export { default as WaterWave } from './WaterWave';
 export { default as Gauge } from './Gauge';
 export { default as TagCloud } from './TagCloud';
 export { default as TimeLine } from './TimelineChart';
+export { default as MiniPie } from './MiniPie';
