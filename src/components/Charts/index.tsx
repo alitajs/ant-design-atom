@@ -7,3 +7,4 @@ export { default as Gauge } from './Gauge';
 export { default as TagCloud } from './TagCloud';
 export { default as TimeLine } from './TimelineChart';
 export { default as MiniPie } from './MiniPie';
+export { default as Bar } from './Bar';
