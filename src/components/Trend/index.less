@@ -1,0 +1,41 @@
+@import '~antd/es/style/themes/default.less';
+
+.atom-trend-item {
+  display: inline-block;
+  font-size: @font-size-base;
+  line-height: 22px;
+
+  .up,
+  .down {
+    position: relative;
+    top: 1px;
+    margin-left: 4px;
+
+    span {
+      font-size: 12px;
+      transform: scale(0.83);
+    }
+  }
+
+  .up {
+    color: @red-6;
+  }
+
+  .down {
+    top: -1px;
+    color: @green-6;
+  }
+
+  &.atom-trend-item-grey .up,
+  &.atom-trend-item-grey .down {
+    color: @text-color;
+  }
+
+  &.atom-reverse-color .up {
+    color: @green-6;
+  }
+
+  &.atom-reverse-color .down {
+    color: @red-6;
+  }
+}
