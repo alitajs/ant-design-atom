@@ -9,8 +9,8 @@ export interface FieldProps {
 
 const Field: React.FC<FieldProps> = ({ label, value, ...rest }) => (
   <div className="atom-field" {...rest}>
-    <span className="atom-label">{label}</span>
-    <span className="atom-number">{value}</span>
+    <span className="atom-field-label">{label}</span>
+    <span className="atom-field-number">{value}</span>
   </div>
 );
 
