@@ -16,6 +16,7 @@ export interface BarProps {
   forceFit?: boolean;
   autoLabel?: boolean;
   style?: React.CSSProperties;
+  alias?: { x: string; y: string };
 }
 
 class Bar extends Component<
@@ -81,15 +82,19 @@ class Bar extends Component<
       data,
       color = 'rgba(24, 144, 255, 0.85)',
       padding,
+      alias = {
+        x: 'x',
+        y: 'y',
+      },
     } = this.props;
 
     const { autoHideXLabels } = this.state;
 
     const scale = {
-      x: {
+      [alias.x]: {
         type: 'cat',
       },
-      y: {
+      [alias.y]: {
         min: 0,
       },
     };
@@ -98,7 +103,7 @@ class Bar extends Component<
       string,
       (...args: any[]) => { name?: string; value: string },
     ] = [
-      'x*y',
+      `${alias.x}*${alias.y}`,
       (x: string, y: string) => ({
         name: x,
         value: y,
@@ -117,16 +122,16 @@ class Bar extends Component<
             padding={padding || 'auto'}
           >
             <Axis
-              name="x"
+              name={alias.x}
               title={false}
               label={autoHideXLabels ? undefined : {}}
               tickLine={autoHideXLabels ? undefined : {}}
             />
-            <Axis name="y" min={0} />
+            <Axis name={alias.y} min={0} />
             <Tooltip showTitle={false} crosshairs={false} />
             <Geom
               type="interval"
-              position="x*y"
+              position={`${alias.x}*${alias.y}`}
               color={color}
               tooltip={tooltip}
             />
