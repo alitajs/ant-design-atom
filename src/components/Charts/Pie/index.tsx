@@ -32,6 +32,7 @@ export interface PieProps {
   tooltip?: boolean;
   valueFormat?: (value: string) => string | React.ReactNode;
   subTitle?: React.ReactNode;
+  alias?: { x: string; y: string };
 }
 interface PieState {
   legendData: {
@@ -175,6 +176,10 @@ class Pie extends Component<PieProps, PieState> {
       animate = true,
       colors,
       lineWidth = 1,
+      alias = {
+        x: 'x',
+        y: 'y',
+      },
     } = this.props;
 
     const { legendData, legendBlock } = this.state;
@@ -200,11 +205,11 @@ class Pie extends Component<PieProps, PieState> {
     let formatColor;
 
     const scale = {
-      x: {
+      [alias.x]: {
         type: 'cat',
         range: [0, 1],
       },
-      y: {
+      [alias.y]: {
         min: 0,
       },
     };
@@ -235,7 +240,7 @@ class Pie extends Component<PieProps, PieState> {
       string,
       (...args: any[]) => { name?: string; value: string },
     ] = [
-      'x*percent',
+      `${alias.x}*percent`,
       (x: string, p: number) => ({
         name: x,
         value: `${(p * 100).toFixed(2)}%`,
@@ -247,12 +252,10 @@ class Pie extends Component<PieProps, PieState> {
     const dv = new DataView();
     dv.source(data).transform({
       type: 'percent',
-      field: 'y',
-      dimension: 'x',
+      field: alias.y,
+      dimension: alias.x,
       as: 'percent',
     });
-
-    console.log(data);
 
     return (
       <div ref={this.handleRoot} className={pieClassName} style={style}>
@@ -276,7 +279,7 @@ class Pie extends Component<PieProps, PieState> {
                 position="percent"
                 color={
                   [
-                    'x',
+                    alias.x,
                     percent || percent === 0 ? formatColor : defaultColors,
                   ] as any
                 }
@@ -300,14 +303,17 @@ class Pie extends Component<PieProps, PieState> {
         {hasLegend && (
           <ul className={styles.legend}>
             {legendData.map((item, i) => (
-              <li key={item.x} onClick={() => this.handleLegendClick(item, i)}>
+              <li
+                key={item[alias.x]}
+                onClick={() => this.handleLegendClick(item, i)}
+              >
                 <span
                   className={styles.dot}
                   style={{
                     backgroundColor: !item.checked ? '#aaa' : item.color,
                   }}
                 />
-                <span className={styles.legendTitle}>{item.x}</span>
+                <span className={styles.legendTitle}>{item[alias.x]}</span>
                 <Divider type="vertical" />
                 <span className={styles.percent}>
                   {`${(Number.isNaN(item.percent)
@@ -316,7 +322,7 @@ class Pie extends Component<PieProps, PieState> {
                   ).toFixed(2)}%`}
                 </span>
                 <span className={styles.value}>
-                  {valueFormat ? valueFormat(item.y) : item.y}
+                  {valueFormat ? valueFormat(item[alias.y]) : item[alias.y]}
                 </span>
               </li>
             ))}
