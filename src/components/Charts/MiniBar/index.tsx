@@ -12,16 +12,26 @@ export interface MiniBarProps {
   }[];
   forceFit?: boolean;
   style?: React.CSSProperties;
+  alias?: { x: string; y: string };
 }
 
 const MiniBar: React.FC<MiniBarProps> = props => {
-  const { height = 0, forceFit = true, color = '#1890FF', data = [] } = props;
+  const {
+    height = 0,
+    forceFit = true,
+    color = '#1890FF',
+    data = [],
+    alias = {
+      x: 'x',
+      y: 'y',
+    },
+  } = props;
 
   const scale = {
-    x: {
+    [alias.x || 'x']: {
       type: 'cat',
     },
-    y: {
+    [alias.y || 'y']: {
       min: 0,
     },
   };
@@ -32,7 +42,7 @@ const MiniBar: React.FC<MiniBarProps> = props => {
     string,
     (...args: any[]) => { name?: string; value: string },
   ] = [
-    'x*y',
+    `${alias.x || 'x'}*${alias.y || 'y'}`,
     (x: string, y: string) => ({
       name: x,
       value: y,
@@ -55,7 +65,7 @@ const MiniBar: React.FC<MiniBarProps> = props => {
           <Tooltip showTitle={false} crosshairs={false} />
           <Geom
             type="interval"
-            position="x*y"
+            position={`${alias.x || 'x'}*${alias.y || 'y'}`}
             color={color}
             tooltip={tooltip}
           />

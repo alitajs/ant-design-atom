@@ -205,11 +205,11 @@ class Pie extends Component<PieProps, PieState> {
     let formatColor;
 
     const scale = {
-      [alias.x]: {
+      [alias.x || 'x']: {
         type: 'cat',
         range: [0, 1],
       },
-      [alias.y]: {
+      [alias.y || 'y']: {
         min: 0,
       },
     };
@@ -240,7 +240,7 @@ class Pie extends Component<PieProps, PieState> {
       string,
       (...args: any[]) => { name?: string; value: string },
     ] = [
-      `${alias.x}*percent`,
+      `${alias.x || 'x'}*percent`,
       (x: string, p: number) => ({
         name: x,
         value: `${(p * 100).toFixed(2)}%`,
@@ -252,8 +252,8 @@ class Pie extends Component<PieProps, PieState> {
     const dv = new DataView();
     dv.source(data).transform({
       type: 'percent',
-      field: alias.y,
-      dimension: alias.x,
+      field: alias.y || 'y',
+      dimension: alias.x || 'x',
       as: 'percent',
     });
 
@@ -279,7 +279,7 @@ class Pie extends Component<PieProps, PieState> {
                 position="percent"
                 color={
                   [
-                    alias.x,
+                    alias.x || 'x',
                     percent || percent === 0 ? formatColor : defaultColors,
                   ] as any
                 }
@@ -304,7 +304,7 @@ class Pie extends Component<PieProps, PieState> {
           <ul className={styles.legend}>
             {legendData.map((item, i) => (
               <li
-                key={item[alias.x]}
+                key={item[alias.x || 'x']}
                 onClick={() => this.handleLegendClick(item, i)}
               >
                 <span
@@ -313,7 +313,9 @@ class Pie extends Component<PieProps, PieState> {
                     backgroundColor: !item.checked ? '#aaa' : item.color,
                   }}
                 />
-                <span className={styles.legendTitle}>{item[alias.x]}</span>
+                <span className={styles.legendTitle}>
+                  {item[alias.x || 'x']}
+                </span>
                 <Divider type="vertical" />
                 <span className={styles.percent}>
                   {`${(Number.isNaN(item.percent)
@@ -322,7 +324,9 @@ class Pie extends Component<PieProps, PieState> {
                   ).toFixed(2)}%`}
                 </span>
                 <span className={styles.value}>
-                  {valueFormat ? valueFormat(item[alias.y]) : item[alias.y]}
+                  {valueFormat
+                    ? valueFormat(item[alias.y || 'y'])
+                    : item[alias.y || 'y']}
                 </span>
               </li>
             ))}
