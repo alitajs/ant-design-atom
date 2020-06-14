@@ -12,3 +12,4 @@
 | color    | 背景色               | string                         | `rgba(24, 144, 255, 1)` | 否       |
 | height   | 高度                 | number                         | 1                       | 否       |
 | forceFit | 图表的宽度自适应开关 | boolean                        | `false`                 | 否       |
+| alias    | 别名                 | {x: string, y: string}         | { x: x, y: y }          | 否       |

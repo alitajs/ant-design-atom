@@ -25,6 +25,7 @@ export interface MiniAreaProps {
     x: number | string;
     y: number;
   }[];
+  alias?: { x: string; y: string };
 }
 
 const MiniArea: React.FC<MiniAreaProps> = props => {
@@ -40,17 +41,21 @@ const MiniArea: React.FC<MiniAreaProps> = props => {
     xAxis,
     yAxis,
     animate = true,
+    alias = {
+      x: 'x',
+      y: 'y',
+    },
   } = props;
 
   const padding: [number, number, number, number] = [36, 5, 30, 5];
 
   const scaleProps = {
-    x: {
+    [alias.x || 'x']: {
       type: 'cat',
       range: [0, 1],
       ...scale.x,
     },
-    y: {
+    [alias.y || 'y']: {
       min: 0,
       ...scale.y,
     },
@@ -60,7 +65,7 @@ const MiniArea: React.FC<MiniAreaProps> = props => {
     string,
     (...args: any[]) => { name?: string; value: string },
   ] = [
-    'x*y',
+    `${alias.x || 'x'}*${alias.y || 'y'}`,
     (x: string, y: string) => ({
       name: x,
       value: y,
@@ -83,7 +88,7 @@ const MiniArea: React.FC<MiniAreaProps> = props => {
           >
             <Axis
               key="axis-x"
-              name="x"
+              name={alias.x || 'x'}
               label={null}
               line={null}
               tickLine={null}
@@ -92,7 +97,7 @@ const MiniArea: React.FC<MiniAreaProps> = props => {
             />
             <Axis
               key="axis-y"
-              name="y"
+              name={alias.y || 'y'}
               label={null}
               line={null}
               tickLine={null}
@@ -102,7 +107,7 @@ const MiniArea: React.FC<MiniAreaProps> = props => {
             <Tooltip showTitle={false} crosshairs={false} />
             <Geom
               type="area"
-              position="x*y"
+              position={`${alias.x || 'x'}*${alias.y || 'y'}`}
               color={color}
               tooltip={tooltip}
               shape="smooth"

@@ -87,14 +87,15 @@ class Bar extends Component<
         y: 'y',
       },
     } = this.props;
+    console.log(alias);
 
     const { autoHideXLabels } = this.state;
 
     const scale = {
-      [alias.x]: {
+      [alias.x || 'x']: {
         type: 'cat',
       },
-      [alias.y]: {
+      [alias.y || 'y']: {
         min: 0,
       },
     };
@@ -103,7 +104,7 @@ class Bar extends Component<
       string,
       (...args: any[]) => { name?: string; value: string },
     ] = [
-      `${alias.x}*${alias.y}`,
+      `${alias.x || 'x'}*${alias.y || 'y'}`,
       (x: string, y: string) => ({
         name: x,
         value: y,
@@ -122,16 +123,16 @@ class Bar extends Component<
             padding={padding || 'auto'}
           >
             <Axis
-              name={alias.x}
+              name={alias.x || 'x'}
               title={false}
               label={autoHideXLabels ? undefined : {}}
               tickLine={autoHideXLabels ? undefined : {}}
             />
-            <Axis name={alias.y} min={0} />
+            <Axis name={alias.y || 'y'} min={0} />
             <Tooltip showTitle={false} crosshairs={false} />
             <Geom
               type="interval"
-              position={`${alias.x}*${alias.y}`}
+              position={`${alias.x || 'x'}*${alias.y || 'y'}`}
               color={color}
               tooltip={tooltip}
             />

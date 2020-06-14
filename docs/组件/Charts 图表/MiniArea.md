@@ -19,3 +19,4 @@
 | xAxis       | 横坐标样式                                         | obj                            | {}                      | 否       |
 | yAxis       | 纵坐标样式                                         | obj                            | {}                      | 否       |
 | scale       | 配置数据比例尺，该配置会影响数据在图表中的展示方式 | obj                            | `x: {}, y: {}`          | 否       |
+| alias       | 别名                                               | {x: string, y: string}         | { x: x, y: y }          | 否       |
