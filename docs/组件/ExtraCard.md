@@ -1,8 +1,14 @@
-# ExtraCard
+# ExtraCard 高阶组件
 
 ## 代码演示
 
+### 销售额类别占比
+
 <code src="../../src/components/ExtraCard/demo/basic.tsx" />
+
+### 线上热门搜索
+
+<code src="../../src/components/ExtraCard/demo/topSearch.tsx" />
 
 ## API
 
