@@ -21,3 +21,5 @@
 | ----- | -------- | ----------------- | ------ | -------- |
 | label | 选项名称 | string            | 无     | 否       |
 | value | 选项值   | `string | number` | 无     | 否       |
+| abel  | 选项名称 | string            | 无     | 否       |
+| value | 选项值   | `string | number` | 无     | 否       |
