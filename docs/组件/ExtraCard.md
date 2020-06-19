@@ -1,8 +1,14 @@
-# ExtraCard
+# ExtraCard 高阶组件
 
 ## 代码演示
 
+### 销售额类别占比
+
 <code src="../../src/components/ExtraCard/demo/basic.tsx" />
+
+### 线上热门搜索
+
+<code src="../../src/components/ExtraCard/demo/topSearch.tsx" />
 
 ## API
 
@@ -20,6 +26,4 @@
 | 参数  | 说明     | 类型              | 默认值 | 是否必填 |
 | ----- | -------- | ----------------- | ------ | -------- |
 | label | 选项名称 | string            | 无     | 否       |
-| value | 选项值   | `string | number` | 无     | 否       |
-| abel  | 选项名称 | string            | 无     | 否       |
 | value | 选项值   | `string | number` | 无     | 否       |
