@@ -10,4 +10,5 @@ export interface IExtraCardProps {
   radioGroupChange?: (val: string | number) => void;
   menuList?: string[];
   menuChange?: (val: string) => void;
+  extra?: string | React.ReactNode;
 }

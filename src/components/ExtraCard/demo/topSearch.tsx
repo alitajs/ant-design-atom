@@ -3,7 +3,8 @@
  * desc: 封装卡片
  */
 import React, { FC } from 'react';
-import { Space, Tooltip, Row, Col, Table } from 'antd';
+import { Space, Tooltip, Row, Col, Table, DatePicker } from 'antd';
+import locale from 'antd/es/date-picker/locale/zh_CN';
 import {
   ExtraCard,
   MiniArea,
@@ -13,6 +14,8 @@ import {
   Trend,
 } from 'ant-design-atom';
 import { InfoCircleOutlined } from '@ant-design/icons';
+
+const { RangePicker } = DatePicker;
 
 const spanProps = {
   xs: 24,
@@ -99,6 +102,7 @@ const Page: FC = () => {
         menuChange={(e: string) => {
           console.log(e);
         }}
+        extra={<RangePicker locale={locale} />}
       >
         <Space size="large" style={{ width: '100%' }} direction="vertical">
           <Row gutter={24} type="flex">
