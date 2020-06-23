@@ -15,6 +15,7 @@ const ExtraCard: FC<IExtraCardProps> = props => {
     radioGroupChange,
     menuList = [],
     menuChange,
+    extra = '',
   } = props;
 
   useEffect(() => {
@@ -39,6 +40,7 @@ const ExtraCard: FC<IExtraCardProps> = props => {
       }}
       extra={
         <div className="atom-ecard-extra">
+          {extra}
           {radioGroup && radioGroup.length > 0 && (
             <div className="atom-ecard-radio">
               <Radio.Group value={radioValue} onChange={() => {}}>

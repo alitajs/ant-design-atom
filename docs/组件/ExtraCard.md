@@ -1,4 +1,4 @@
-# ExtraCard 高阶组件
+# ExtraCard 高阶卡片
 
 ## 代码演示
 
@@ -12,14 +12,15 @@
 
 ## API
 
-| 参数             | 说明                 | 类型              | 默认值 | 是否必填 |
-| ---------------- | -------------------- | ----------------- | ------ | -------- |
-| title            | 卡片标题             | string or node    | ''     | 是       |
-| loading          | 卡片是否加载中的标识 | boolean           | false  | 否       |
-| radioGroup       | radio 数组           | IRadioGroupItem[] | 无     | 否       |
-| radioGroupChange | radio 数组点击事件   | (e) => void       | 无     | 否       |
-| menuList         | 下拉菜单数组         | string[]          | 无     | 否       |
-| menuChange       | 下拉菜单数组点击事件 | (e) => void       | 无     | 否       |
+| 参数             | 说明                 | 类型               | 默认值 | 是否必填 |
+| ---------------- | -------------------- | ------------------ | ------ | -------- |
+| title            | 卡片标题             | string or node     | ''     | 是       |
+| loading          | 卡片是否加载中的标识 | boolean            | false  | 否       |
+| radioGroup       | radio 数组           | IRadioGroupItem[]  | 无     | 否       |
+| radioGroupChange | radio 数组点击事件   | (e) => void        | 无     | 否       |
+| menuList         | 下拉菜单数组         | string[]           | 无     | 否       |
+| menuChange       | 下拉菜单数组点击事件 | (e) => void        | 无     | 否       |
+| extra            | 卡片右上角区域       | `string` or `node` | 无     | 否       |
 
 ### IRadioGroupItem
 
